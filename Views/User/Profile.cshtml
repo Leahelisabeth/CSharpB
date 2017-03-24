@@ -1,0 +1,55 @@
+<h1>
+    @ViewBag.UserName @ViewBag.UserLName!
+
+</h1>
+<form action="Logout" method="Post">
+    <input type="submit" value="Logout">
+</form>
+
+<h4>Here is your description:</h4>
+<p>@ViewBag.Desc</p>
+
+<h4>    Your Professional Network</h4>
+<table> 
+    <tr>
+        <th>Name</th>
+    </tr>
+
+
+@{
+        foreach(var c in @ViewBag.Accept){
+            <tr>
+            <td><a href="users/@c.NetUser.UserId">@c.NetUser.FirstName @c.NetUser.LastName</a></td>
+        </tr>
+        }
+}
+</table>
+<h4> Invitations</h4>
+
+<table> 
+    <tr>
+        <th>Name</th>
+        <th>Action</th>
+        <th style="color: white"> ignore </th>
+    </tr>
+
+
+@{
+        foreach(var c in @ViewBag.Pend){
+            <tr>
+            <td><a href="users/@c.NetUser.UserId">@c.NetUser.FirstName @c.NetUser.LastName</a></td>
+            <td> 
+                <form action="Accept/@c.ConnecId" method="post">
+            <input type="Submit" value ="Accept">
+            </form>
+            </td>
+            <td> 
+                <form action="Ignore/@c.ConnecId" method="post">
+            <input type="Submit" value ="Ignore">
+            </form>
+            </td>
+        </tr>
+        }
+}
+</table>
+

@@ -1,0 +1,36 @@
+---------------MAIN DIRECTORY CHECKLIST------------
+project.json **!first thing!** +
+    restore +
+startup.cs +
+    namespace
+    context string
+appsettings.json +
+    database name
+------------------MODELS CHECKLIST -----------------
+Models directory folder +
+Context.cs +
+    namespace +
+    schema references +
+BaseEntity.cs +
+    namespace
+RegisterViewModel.cs +
+    namespace
+User.cs
+    namespace
+-----------------CONTROLLER CHECKLIST-----------
+UserController.cs +
+    contextname--2 places
+    
+-----------------VIEW CHECKLIST---------------
+User dir folder +
+Index.cshtml +
+    @namespace
+    Register.cshtml 
+    @namespace
+Professional_profile.cshtml
+    Display Current users profile description
+    displays the users friends network they have ->users.Connections where status == accept
+    Displays user.connects.where status == pending
+
+ShowOne.cshtml -> profile of any user
+suggestions -> allusers != connection with cur user

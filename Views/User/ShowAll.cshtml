@@ -1,0 +1,26 @@
+<h1>Users you may want to connect with:
+</h1>
+
+<table class= table> 
+    <tr>    
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    @{
+        foreach(var user in @ViewBag.OtherUsers)
+        {
+            
+        <tr>
+                <td><a href="users/@user.UserId">@user.FirstName @user.LastName </a></td>
+                <td>
+                    <form action="Connect/@user.UserId" method="post">
+                        <input type="submit" value="Connect" style="background: none;border:none;color:#337ab7">
+                    </form>
+                </td>
+            </tr>
+            }
+    }
+</table>
+
+        
+    
