@@ -18,6 +18,14 @@
       "type": "build"
     }
   },
+  "publishOptions": {
+    "include": [
+        "Content",
+        "Views",
+        "web.config",
+        "appsettings.json"
+    ]
+},
   "frameworks": {
     "netcoreapp1.0": {}
   },
